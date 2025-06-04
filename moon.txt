@@ -1,0 +1,25 @@
+Backend
+npm install -D nodemon
+npm install express
+npm i mongoose
+npm i dotenv
+npm i @upstash/ratelimit@latest
+npm i cors
+
+Frontend
+npm create vite@latest .
+npm i react-router
+npm i react-hot-toast
+tailind 3.4 version
+npm i -D daisyui@latest
+npm i lucide-react
+npm i axios
+
+
+Extension
+es7
+tailwind css intellisense
+
+
+
+mongodb+srv://mrmuhammadmoon:uuDtg16g1At2YegJ@cluster0.jqnlrkf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
