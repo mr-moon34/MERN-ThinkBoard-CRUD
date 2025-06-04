@@ -27,24 +27,17 @@ app.use(rateLimiter);
 // API routes
 app.use("/api/notes", notesRoutes);
 
-// if (process.env.NODE_ENV === "production") {
-//   // Set static folder
-//   const staticPath = path.join(__dirname, "../frontend/dist");
-//   app.use(express.static(staticPath));
-
-//   // Any request that doesn't match API routes should go to index.html
-//   app.get(/^(?!\/api).*/, (req, res) => {
-//     res.sendFile(path.join(staticPath, "index.html"));
-//   });
-// }
-
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  // Set static folder
+  const staticPath = path.join(__dirname, "../frontend/dist");
+  app.use(express.static(staticPath));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  // Any request that doesn't match API routes should go to index.html
+  app.get(/^(?!\/api).*/, (req, res) => {
+    res.sendFile(path.join(staticPath, "index.html"));
   });
 }
+
 
 connectDB().then(() => {
   app.listen(PORT, () => {
