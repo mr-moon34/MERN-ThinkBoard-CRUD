@@ -1,3 +1,6 @@
+cd frontend ==> npm run dev
+root ==> npm run start
+
 Backend
 npm install -D nodemon
 npm install express
