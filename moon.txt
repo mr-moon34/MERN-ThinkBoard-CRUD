@@ -1,6 +1,10 @@
 cd frontend ==> npm run dev
 root ==> npm run start
 
+render Deploymnet me:
+Build Command ==> npm run build
+Start Command ==> npm run start
+
 Backend
 npm install -D nodemon
 npm install express
