@@ -38,6 +38,17 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  const staticPath = path.join(__dirname, "../frontend/dist");
+  app.use(express.static(staticPath));
+
+  // Any request that doesn\'t match API routes should go to index.html
+  app.get(/^(?!\/api).*/, (req, res) => {
+    res.sendFile(path.join(staticPath, "index.html"));
+  });
+}
+
 
 connectDB().then(() => {
   app.listen(PORT, () => {
